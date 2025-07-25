@@ -17,8 +17,6 @@ class Deputado extends Model
         'dep_url_foto',
         'dep_uf_id',
         'dep_par_id',
-
-        // Novos campos
         'dep_data_nascimento',
         'dep_municipio_nascimento',
         'dep_escolaridade',
@@ -27,7 +25,6 @@ class Deputado extends Model
         'dep_con_ele_id',
     ];
 
-    // Relações existentes
     public function despesas()
     {
         return $this->hasMany(Despesa::class, 'des_dep_id', 'dep_id');
@@ -43,7 +40,6 @@ class Deputado extends Model
         return $this->belongsTo(Partido::class, 'dep_par_id', 'par_id');
     }
 
-    // Novas relações
     public function gabinete()
     {
         return $this->belongsTo(Gabinete::class, 'dep_gab_id', 'gab_id');
@@ -70,4 +66,5 @@ class Deputado extends Model
                     ->withPivot('dep_pro_id')
                     ->withTimestamps();
     }
+
 }
