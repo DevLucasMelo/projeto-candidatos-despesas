@@ -13,4 +13,6 @@ Route::get('/deputados/{id}/info', [DeputadoController::class, 'info'])->name('d
 
 Route::get('/deputados/{id}/despesas', [DeputadoController::class, 'despesas'])->name('deputados.despesas');
 
+Route::get('/dashboard', [DeputadoController::class, 'dashboard'])->name('dashboard');
 
+Route::get('/deputados/comparar', [DeputadoController::class, 'comparar'])->name('deputados.comparar');
