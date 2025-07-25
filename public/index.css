@@ -1,0 +1,52 @@
+.navbar-dark .navbar-nav .nav-link {
+    color: white !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #cccccc !important;
+}
+
+#bg-filtro-1{
+    background-color: rgb(13, 110, 253) !important; 
+}
+
+#bg-filtro-2{
+    background-color: rgb(30, 75, 141) !important; 
+}
+
+#info-dep{
+    background-color: rgb(30, 75, 141) !important; 
+    color: white;
+    text-align: center;
+}
+
+#tit-2{
+    color: rgb(30, 75, 141) !important; 
+    text-align: center;
+}
+
+body {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+#btn-filtrar{
+    font-size: 1.0rem;      
+    padding: 0.4rem 1.1rem; 
+    height: auto;           
+    margin-left: 50px;
+}
+
+#btn-limpar{
+    border: none;
+    color: rgb(56, 55, 55);
+    font-size: 1.0rem;      
+    padding: 0.4rem 1.1rem;
+    height: auto;           
+    background-color: #dcd7d7;
+}
+
+#btn-limpar:hover {
+    background-color: #8c7f7f; 
+    color: white;              
+    cursor: pointer;
+}
