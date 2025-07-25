@@ -11,12 +11,28 @@
             <tr>
                 <th>Tipo</th>
                 <th>Fornecedor</th>
-                <th>Valor</th>
-                <th>Data</th>
+                <th>
+                    <a href="{{ route('deputados.despesas', ['id' => $deputado->dep_id, 'ordenar' => $ordenar === 'valor' ? 'valor_desc' : 'valor']) }}">
+                        Valor
+                        @if(str_starts_with($ordenar, 'valor'))
+                            {!! $ordenar === 'valor' ? '↑' : '↓' !!}
+                        @endif
+                    </a>
+                </th>
+                <th>
+                    <a href="{{ route('deputados.despesas', ['id' => $deputado->dep_id, 'ordenar' => $ordenar === 'data' ? 'data_desc' : 'data']) }}">
+                        Data
+                        @if(str_starts_with($ordenar, 'data'))
+                            {!! $ordenar === 'data' ? '↑' : '↓' !!}
+                        @endif
+                    </a>
+                </th>
             </tr>
         </thead>
         <tbody>
-            @foreach($deputado->despesas as $despesa)
+            @php $total = 0; @endphp
+            @foreach($despesasOrdenadas as $despesa)
+                @php $total += $despesa->des_valor_documento; @endphp
                 <tr>
                     <td>{{ $despesa->des_tipo_despesa }}</td>
                     <td>{{ $despesa->des_nome_fornecedor }}</td>
@@ -25,6 +41,12 @@
                 </tr>
             @endforeach
         </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">Total</th>
+                <th colspan="2">R$ {{ number_format($total, 2, ',', '.') }}</th>
+            </tr>
+        </tfoot>
     </table>
 @endif
 @endsection
