@@ -10,7 +10,6 @@
         <thead>
             <tr>
                 <th>Tipo</th>
-                <th>Fornecedor</th>
                 <th>
                     <a href="{{ route('deputados.despesas', ['id' => $deputado->dep_id, 'ordenar' => $ordenar === 'valor' ? 'valor_desc' : 'valor']) }}">
                         Valor
@@ -35,7 +34,6 @@
                 @php $total += $despesa->des_valor_documento; @endphp
                 <tr>
                     <td>{{ $despesa->des_tipo_despesa }}</td>
-                    <td>{{ $despesa->des_nome_fornecedor }}</td>
                     <td>R$ {{ number_format($despesa->des_valor_documento, 2, ',', '.') }}</td>
                     <td>{{ \Carbon\Carbon::parse($despesa->des_data_documento)->format('d/m/Y') }}</td>
                 </tr>
