@@ -42,7 +42,7 @@
 
                     <div class="col-md-3 d-flex justify-content-end gap-2">
                         <button type="submit" id="btn-filtrar" class="btn btn-sm btn-primary">Filtrar</button>
-                        <a href="{{ route('deputados.index') }}" id="btn-limpar" class="btn btn-sm btn-outline-light">Limpar</a>
+                        <a href="{{ route('deputados.index') }}" id="btn-limpar" class="btn btn-outline-primary">Limpar</a>
                     </div>
                 </div>
             </form>
@@ -72,5 +72,9 @@
             </div>
         </div>
     @endforeach
+</div>
+
+<div class="mt-4">
+    {{ $deputados->withQueryString()->links() }}
 </div>
 @endsection
