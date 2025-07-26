@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeputadoController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/deputados');
 
 Route::get('/deputados', [DeputadoController::class, 'index'])->name('deputados.index');
 
