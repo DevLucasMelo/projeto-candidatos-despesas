@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('index.css') }}">
 
+    <link rel="icon" href="{{ asset('img/deputado-icon-branco.png') }}" type="image/png" >
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -17,7 +19,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="{{ route('deputados.index') }}">
-            <img src="{{ asset('img/deputado-icon.png') }}" alt="Deputado" style="width: 30px; filter: brightness(0) invert(1); margin-right: 10px;">
+            <img src="{{ asset('img/deputado-icon-branco.png') }}" alt="Deputado" style="width: 30px; margin-right: 10px;">
             Gerenciamento de Despesas dos Deputados
         </a>
 
