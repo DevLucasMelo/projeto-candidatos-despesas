@@ -32,6 +32,7 @@ class DeputadoController extends Controller
                     $sub->where('des_tipo_despesa', 'like', '%' . $request->despesa . '%')
                 )
             )
+            ->orderBy('dep_nome')
             ->paginate(12);
 
         $ufs = Uf::orderBy('uf_sigla')->get();
