@@ -1,19 +1,16 @@
 services:
   - type: web
     name: deputados-laravel
-    env: php
+    env: docker
     plan: free
-    buildCommand: |
-      composer install
-      php artisan migrate --force
-      cd js && npm install && npm run build
+    dockerfilePath: Dockerfile
+    buildCommand: ""
     startCommand: php artisan serve --host 0.0.0.0 --port 10000
     autoDeploy: true
     envVars:
       - key: APP_ENV
         value: production
       - key: APP_KEY
-        value: 'base64:76jMjxeN/ipgJVzrdOo7HiMCj0ltYuRLp268mW5I8p4=' 
+        value: 'base64:76jMjxeN/ipgJVzrdOo7HiMCj0ltYuRLp268mW5I8p4='
       - key: DATABASE_URL
         value: 'mysql://root:12%403cb5La78@mysql.railway.internal:3306/railway'
- 
