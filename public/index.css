@@ -42,11 +42,16 @@ body {
     font-size: 1.0rem;      
     padding: 0.4rem 1.1rem;
     height: auto;           
-    background-color: #dcd7d7;
+    background-color: #faf8f8;
 }
 
 #btn-limpar:hover {
     background-color: #8c7f7f; 
     color: white;              
     cursor: pointer;
+}
+
+table.table-striped > tbody > tr:nth-of-type(odd) > td,
+table.table-striped > tbody > tr:nth-of-type(odd) > th {
+    background-color: #93c7ff !important;
 }
