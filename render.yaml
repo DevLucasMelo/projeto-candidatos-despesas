@@ -3,9 +3,9 @@ services:
     name: deputados-laravel
     env: docker
     plan: free
-    dockerfilePath: Dockerfile
+    dockerfilePath: docker/php/Dockerfile
     buildCommand: ""
-    startCommand: php artisan serve --host 0.0.0.0 --port 10000
+    startCommand: php artisan serve --host 0.0.0.0 --port $PORT
     autoDeploy: true
     envVars:
       - key: APP_ENV
