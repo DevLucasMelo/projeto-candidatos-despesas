@@ -10,6 +10,8 @@ services:
       - .:/var/www
     ports:
       - 9000:9000
+    depends_on:
+      - db
 
   nginx:
     image: nginx:alpine
@@ -21,3 +23,20 @@ services:
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - app
+
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: despesas_deputados
+      MYSQL_ROOT_PASSWORD: 12@3cb5La78
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: laravel
+    ports:
+      - 3307:3306
+    volumes:
+      - dbdata:/var/lib/mysql
+
+volumes:
+  dbdata:
